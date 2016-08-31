@@ -1,10 +1,10 @@
 export const Actions = {
-	REQUEST_TIMEDOUT: 'requestTimedout',
-	REQUEST_FAILED: 'requestFailed',
-	REQUEST_SUCCEEDED: 'requestSucceeded'
+	SHOW_CONN_ERROR: 'showConnError',
+	SHOW_SERVER_ERROR: 'showServerError',
+	HIDE_ERROR: 'hideError'
 };
 
 export const ErrorTypes = {
 	CONN_ERROR: 'connError',
-	FATAL_ERROR: 'fatalError'
+	SERVER_ERROR: 'serverError'
 };

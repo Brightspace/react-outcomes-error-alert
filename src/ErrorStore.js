@@ -41,19 +41,19 @@ ErrorStore.dispatchToken = AppDispatcher.register( payload => {
 
 	switch ( action.actionType ) {
 
-		case Actions.REQUEST_TIMEDOUT:
+		case Actions.SHOW_CONN_ERRROR:
 			errorHasHappened = true;
 			errorType = ErrorTypes.CONN_ERROR;
 			_errorStore.emitError();
 			break;
 
-		case Actions.REQUEST_FAILED:
+		case Actions.SHOW_SERVER_ERROR:
 			errorHasHappened = true;
-			errorType = ErrorTypes.FATAL_ERROR;
+			errorType = ErrorTypes.SERVER_ERROR;
 			_errorStore.emitError();
 			break;
 
-		case Actions.REQUEST_SUCCEEDED:
+		case Actions.HIDE_ERROR:
 			if ( errorHasHappened ) {
 				errorHasHappened = false;
 				errorType = '';

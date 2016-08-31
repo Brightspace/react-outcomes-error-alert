@@ -3,23 +3,23 @@ import AppDispatcher from './AppDispatcher.js';
 
 export default {
 
-	handleServerTimeout( err ) {
+	showConnErrorAlert( err ) {
 		AppDispatcher.handleMappingsBackgroundAction({
-			actionType: Actions.REQUEST_TIMEDOUT,
+			actionType: Actions.SHOW_CONN_ERROR,
 			error: err
 		});
 	},
 
-	handleServerError( err ) {
+	showServerErrorAlert( err ) {
 		AppDispatcher.handleMappingsBackgroundAction({
-			actionType: Actions.REQUEST_FAILED,
+			actionType: Actions.SHOW_SERVER_ERROR,
 			error: err
 		});
 	},
 
 	hideErrorAlert() {
 		AppDispatcher.handleMappingsBackgroundAction({
-			actionType: Actions.REQUEST_SUCCEEDED
+			actionType: Actions.HIDE_ERROR
 		});
 	}
 };

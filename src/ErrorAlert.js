@@ -40,7 +40,7 @@ class ErrorAlert extends React.Component {
 			return null;
 		}
 
-		if ( this.state.errorType === ErrorTypes.FATAL_ERROR ) {
+		if ( this.state.errorType === ErrorTypes.SERVER_ERROR ) {
 			return (
 				<div className='fatal-error'>
 					<div>
