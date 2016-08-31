@@ -52,8 +52,8 @@ To Trigger the different error alerts the library exposes three error actions:
 
 import { ErrorActions } from 'react-outcomes-error-alert';
 
-ErrorActions.handleServerTimeout();
-ErrorActions.handleServerError();
+ErrorActions.showConnErrorAlert();
+ErrorActions.showServerErrorAlert();
 ErrorActions.hideErrorAlert();
 ```
 ## Contributing
