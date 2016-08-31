@@ -47,10 +47,13 @@
     "eslint": "^2.2.0",
     "eslint-config-brightspace": "^0.1.0",
     "eslint-plugin-react": "^3.4.2",
+    "flux": "^2.1.1",
     "images-to-variables": "^0.3.2",
     "jsdom": "^9.4.5",
     "mocha": "^3.0.2",
     "node-sass": "^3.8.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
     "rimraf": "^2.5.0"
   }
 }
