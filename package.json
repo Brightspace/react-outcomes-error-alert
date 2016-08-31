@@ -12,8 +12,7 @@
     "build": "npm run build:img && npm run build:css && npm run lint:js && npm run build:js",
     "clean-node-modules": "rimraf node_modules && rimraf bower_components",
     "lint:js": "eslint ./src/ErrorAlert.js",
-    "postinstall": "bower install",
-    "test": "jest test/ErrorAlert-test.js"
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
