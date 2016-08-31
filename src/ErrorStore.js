@@ -41,7 +41,7 @@ ErrorStore.dispatchToken = AppDispatcher.register( payload => {
 
 	switch ( action.actionType ) {
 
-		case Actions.SHOW_CONN_ERRROR:
+		case Actions.SHOW_CONN_ERROR:
 			errorHasHappened = true;
 			errorType = ErrorTypes.CONN_ERROR;
 			_errorStore.emitError();

@@ -14,7 +14,7 @@
 	margin: 0 0 10px 0;
 }
 
-.fatal-error {
+.server-error {
 	@include _errorContainer( 14px );
 
 	.refresh-link {

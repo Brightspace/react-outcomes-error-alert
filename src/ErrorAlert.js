@@ -42,7 +42,7 @@ class ErrorAlert extends React.Component {
 
 		if ( this.state.errorType === ErrorTypes.SERVER_ERROR ) {
 			return (
-				<div className='fatal-error'>
+				<div className='server-error'>
 					<div>
 						<b>Oops!</b> We're having trouble connecting you. You might want to <a className='refresh-link' onClick={this.props.refresh}>refresh the page</a>, or try again later.
 					</div>
