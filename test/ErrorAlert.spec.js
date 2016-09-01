@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { expect } from 'chai';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import ErrorAlert from '../src/ErrorAlert.js';
 import ErrorActions from '../src/ErrorActions.js';
 import { ErrorTypes } from '../src/Constants.js';
 
 function verifyAlertIsHidden( node ) {
-	ErrorActions.hideErrorAlert();
+	ErrorActions.hideErrorAlertIfVisible();
 	let state = node.state;
 	expect( ReactDOM.findDOMNode( alert.node ) ).to.equal( null );
 	expect( state.errorHasHappened ).to.be.false;

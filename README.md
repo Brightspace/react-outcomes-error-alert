@@ -46,7 +46,7 @@ To Trigger the different error alerts the library exposes three error actions:
 
 * `handleServerTimeout`: Will display connection error alert
 * `handleServerError`: Will display server error alert
-* `hideErrorAlert`: Will hide the erro alert
+* `hideErrorAlertIfVisible`: Will hide the error alert
 
 ```javascript
 
@@ -54,7 +54,7 @@ import { ErrorActions } from 'react-outcomes-error-alert';
 
 ErrorActions.showConnErrorAlert();
 ErrorActions.showServerErrorAlert();
-ErrorActions.hideErrorAlert();
+ErrorActions.hideErrorAlertIfVisible();
 ```
 ## Contributing
 

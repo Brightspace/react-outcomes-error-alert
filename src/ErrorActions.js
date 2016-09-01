@@ -17,7 +17,7 @@ export default {
 		});
 	},
 
-	hideErrorAlert() {
+	hideErrorAlertIfVisible() {
 		AppDispatcher.handleMappingsBackgroundAction({
 			actionType: Actions.HIDE_ERROR
 		});
