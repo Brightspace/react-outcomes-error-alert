@@ -69,5 +69,5 @@ This repository is configured with [EditorConfig](http://editorconfig.org) rules
 
 [npm-url]: https://www.npmjs.org/package/react-outcomes-error-alert
 [npm-image]: https://img.shields.io/npm/v/react-outcomes-error-alert.svg
-[ci-url]: https://magnum.travis-ci.com/Brightspace/react-outcomes-error-alert
-[ci-image]: https://magnum.travis-ci.com/Brightspace/react-outcomes-error-alert.svg?token=tEx24PJxmBx8z7J59ep5&branch=master
+[ci-url]: https://travis-ci.org/Brightspace/react-outcomes-error-alert
+[ci-image]: https://img.shields.io/travis-ci/Brightspace/react-outcomes-error-alert.svg
