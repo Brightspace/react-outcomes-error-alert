@@ -31,7 +31,7 @@
   "peerDependencies": {
     "react": ">= 0.14.0 < 16",
     "react-dom": ">= 0.14.0 < 16",
-    "flux": ">=2.0.0 < 3"
+    "flux": ">= 2.0.0 < 3"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

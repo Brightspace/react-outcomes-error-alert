@@ -2,16 +2,9 @@ import { Dispatcher } from 'flux';
 
 class AppDispatcher extends Dispatcher {
 
-	handleMappingsViewAction( action ) {
+	handleBackgroundAction( action ) {
 		this.dispatch({
-			source: 'MAPPINGS_VIEW_ACTION',
-			action: action
-		});
-	}
-
-	handleMappingsBackgroundAction( action ) {
-		this.dispatch({
-			source: 'MAPPINGS_BACKGROUND_ACTION',
+			source: 'BACKGROUND_ACTION',
 			action: action
 		});
 	}

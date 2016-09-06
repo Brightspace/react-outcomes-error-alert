@@ -44,7 +44,7 @@ class ErrorAlert extends React.Component {
 			return (
 				<div className='server-error'>
 					<div>
-						<b>Oops!</b> We're having trouble connecting you. You might want to <a className='refresh-link' onClick={this.props.refresh}>refresh the page</a>, or try again later.
+						<strong>Oops!</strong> We're having trouble connecting you. You might want to <a className='refresh-link' onClick={this.props.refresh}>refresh the page</a>, or try again later.
 					</div>
 				</div>
 			);
@@ -55,7 +55,7 @@ class ErrorAlert extends React.Component {
 				<div>
 					{this._buildSpinner()}
 					<span className='server-error-text'>
-						<b>Oops!</b> We're having trouble connecting you. We'll keep trying while this page is open, or you can try again later
+						<strong>Oops!</strong> We're having trouble connecting you. We'll keep trying while this page is open, or you can try again later
 					</span>
 				</div>
 			</div>
