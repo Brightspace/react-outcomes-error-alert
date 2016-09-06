@@ -1,0 +1,17 @@
+{
+	"extends": "brightspace/react-config",
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+    "rules": {
+        "no-console": 1,
+        "no-alert": 0,
+        "prefer-const": 0,
+        "keyword-spacing": 2,
+        "space-after-keywords": 0,
+        "space-return-throw-case": 0
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "react-outcomes-error-alert",
+  "dependencies": {
+    "d2l-colors": "^2.0.0"
+  }
+}
