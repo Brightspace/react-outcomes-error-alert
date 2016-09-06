@@ -44,10 +44,7 @@ class ErrorAlert extends React.Component {
 			return (
 				<div className='server-error'>
 					<div>
-						<strong>Oops!</strong>
-						We're having trouble connecting you. You might want to
-						<a className='refresh-link' onClick={this.props.refresh}>refresh the page</a>
-						, or try again later.
+						<strong>Oops!</strong> We're having trouble connecting you. You might want to <a className='refresh-link' onClick={this.props.refresh}>refresh the page</a>, or try again later.
 					</div>
 				</div>
 			);
