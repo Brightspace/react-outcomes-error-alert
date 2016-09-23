@@ -1,6 +1,7 @@
 import React from 'react';
 import ErrorStore from './ErrorStore.js';
 import { ErrorTypes } from './Constants.js';
+import ErrorFloatingContainer from './ErrorFloatingContainer';
 
 class ErrorAlert extends React.Component {
 
@@ -35,30 +36,34 @@ class ErrorAlert extends React.Component {
 	}
 
 	render() {
-
+		ErrorFloatingContainer;
 		if ( !this.state.errorHasHappened ) {
 			return null;
 		}
 
 		if ( this.state.errorType === ErrorTypes.SERVER_ERROR ) {
 			return (
-				<div className='server-error'>
-					<div>
-						<strong>Oops!</strong> We're having trouble connecting you. You might want to <a className='refresh-link' onClick={this.props.refresh}>refresh the page</a>, or try again later.
+				<ErrorFloatingContainer>
+					<div className='server-error'>
+						<div>
+							<strong>Oops!</strong> We're having trouble connecting you. You might want to <a className='refresh-link' onClick={this.props.refresh}>refresh the page</a>, or try again later.
+						</div>
 					</div>
-				</div>
+				</ErrorFloatingContainer>
 			);
 		}
 
 		return (
-			<div className='conn-error' >
-				<div>
-					{this._buildSpinner()}
-					<span className='server-error-text'>
-						<strong>Oops!</strong> We're having trouble connecting you. We'll keep trying while this page is open, or you can try again later
-					</span>
+			<ErrorFloatingContainer>
+				<div className='conn-error' >
+					<div>
+						{this._buildSpinner()}
+						<span className='server-error-text'>
+							<strong>Oops!</strong> We're having trouble connecting you. We'll keep trying while this page is open, or you can try again later
+						</span>
+					</div>
 				</div>
-			</div>
+			</ErrorFloatingContainer>
 		);
 	}
 }

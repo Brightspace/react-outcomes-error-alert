@@ -1,5 +1,6 @@
 @import '../bower_components/d2l-colors/d2l-colors.scss';
 @import '../assets/images.scss';
+@import './ErrorFloatingContainer.scss';
 
 @mixin _errorContainer( $padding ) {
 	background-color: #fff6f5;
