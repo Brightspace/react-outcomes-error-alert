@@ -1,7 +1,7 @@
 import React from 'react';
 import ErrorStore from './ErrorStore.js';
 import { ErrorTypes } from './Constants.js';
-import ErrorFloatingContainer from './ErrorFloatingContainer';
+import ErrorFloatingContainer from './ErrorFloatingContainer';  // eslint-disable-line no-unused-vars
 
 class ErrorAlert extends React.Component {
 
@@ -36,7 +36,7 @@ class ErrorAlert extends React.Component {
 	}
 
 	render() {
-		ErrorFloatingContainer;
+
 		if ( !this.state.errorHasHappened ) {
 			return null;
 		}
