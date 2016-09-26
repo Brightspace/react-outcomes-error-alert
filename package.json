@@ -1,7 +1,7 @@
 {
   "name": "react-outcomes-error-alert",
   "description": "Error alert displayed in outcomes FRAs",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "prebuild": "npm run clean -s",
@@ -29,6 +29,9 @@
   "author": "D2L Corporation",
   "license": "Apache-2.0",
   "homepage": "https://github.com/Brightspace/react-outcomes-error-alert",
+  "dependencies": {
+    "classnames": "^2.2.5"
+  },
   "peerDependencies": {
     "react": ">= 0.14.0 < 16",
     "react-dom": ">= 0.14.0 < 16",

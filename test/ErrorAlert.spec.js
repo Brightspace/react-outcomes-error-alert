@@ -29,7 +29,7 @@ describe( 'ErrorAlert', () => {
 		expect( state.errorHasHappened ).to.be.true;
 		expect( state.errorType ).to.equal( ErrorTypes.CONN_ERROR );
 		expect( alert.node ).to.not.equal( null );
-		expect( ReactDOM.findDOMNode( alert.node ).className ).to.equal( 'conn-error' );
+		expect( ReactDOM.findDOMNode(alert.node).childNodes[0].childNodes[0].childNodes[0].className ).to.equal( 'conn-error' );
 
 		verifyAlertIsHidden( alert.node );
 	});
@@ -44,7 +44,7 @@ describe( 'ErrorAlert', () => {
 		expect( state.errorHasHappened ).to.be.true;
 		expect( state.errorType ).to.equal( ErrorTypes.SERVER_ERROR );
 		expect( alert.node ).to.not.equal( null );
-		expect( ReactDOM.findDOMNode( alert.node ).className ).to.equal( 'server-error' );
+		expect( ReactDOM.findDOMNode(alert.node).childNodes[0].childNodes[0].childNodes[0].className ).to.equal( 'server-error' );
 
 		verifyAlertIsHidden( alert.node );
 	});
