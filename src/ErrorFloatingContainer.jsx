@@ -18,6 +18,9 @@ class ErrorFloatingContainer extends React.Component {
 
 	componentDidMount() {
 
+		// In the case that the docked message is not visible,
+		// this repositions the error message to the top of the screen immediately
+		setTimeout( () => { this.reposition(); }, 0 );
 		window.addEventListener( 'scroll', this.reposition );
 		window.addEventListener( 'resize', this.reposition );
 	}
