@@ -37,24 +37,10 @@ class ErrorAlert extends React.Component {
 
 	render() {
 
+		const { serverErrorText, connectionErrorText, refreshText } = this.props;
+
 		if ( !this.state.errorHasHappened ) {
 			return null;
-		}
-
-		let refreshText = 'refresh the page';
-		let serverErrorText = 'Oops! We\'re having trouble connecting you. You might want to refresh, or try again later.';
-		let connectionErrorText = 'Oops! We\'re having trouble connecting you. We\'ll keep trying while this page is open, or you can try again later';
-
-		if ( this.props.serverErrorText ) {
-			serverErrorText = this.props.serverErrorText;
-		}
-
-		if ( this.props.connectionErrorText ) {
-			connectionErrorText = this.props.connectionErrorText;
-		}
-
-		if ( this.props.refreshText ) {
-			refreshText = this.props.refreshText;
 		}
 
 		let refresh = null;
@@ -94,6 +80,12 @@ ErrorAlert.propTypes = {
 	serverErrorText: React.PropTypes.string,
 	connectionErrorText: React.PropTypes.string,
 	resfreshText: React.PropTypes.string
+};
+
+ErrorAlert.defaultProps = {
+	serverErrorText: 'Oops! We\'re having trouble connecting you. You might want to refresh, or try again later.',
+	connectionErrorText: 'Oops! We\'re having trouble connecting you. We\'ll keep trying while this page is open, or you can try again later',
+	refreshText: 'refresh the page'
 };
 
 export default ErrorAlert;
