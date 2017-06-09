@@ -30,16 +30,27 @@ Include SASS file in your project:
 
 Import and add the react component into your project
 
-The error takes the following property:
+The error takes the following properties:
 
-* `refresh`: required, function to attack to link in the fatal error in order to reload the page
+* `refresh`: optional, function to attach to link in the fatal error in order to reload the page, link not shown if not provided
+* `refreshText`: optional, string that is used for the link of the refresh action, uses default if not provided
+* `connectionErrorText`: optional, string that is displayed in the error alert for a connection error, uses default if not provided
+* `serverErrorText`: optional, string that is displayed in the error alert for a server error, uses default if not provided
 
 ```javascript
 import ErrorAlert from 'react-outcomes-error-alert';
 
 let refresh = () => window.location.reload();
+let refreshText = 'refresh the page';
+let connectionErrorText = 'There was a error connecting.';
+let serverErrorText = 'A server error has occured';
 
-<ErrorAlert refresh={refresh} />
+<ErrorAlert
+  refresh={refresh}
+  refreshText={refreshText}
+  connectionErrorText={connectionErrorText}
+  serverErrorText={serverErrorText}
+/>
 ```
 
 To Trigger the different error alerts the library exposes three error actions:

@@ -37,13 +37,15 @@ class ErrorAlert extends React.Component {
 
 	render() {
 
+		const { serverErrorText, connectionErrorText, refreshText } = this.props;
+
 		if ( !this.state.errorHasHappened ) {
 			return null;
 		}
 
-		let refresh = 'refresh the page';
+		let refresh = null;
 		if ( this.props.refresh ) {
-			refresh = <a className='refresh-link' onClick={this.props.refresh}>{refresh}</a>;
+			refresh = <a className='refresh-link' onClick={this.props.refresh}>{refreshText}</a>;
 		}
 
 		if ( this.state.errorType === ErrorTypes.SERVER_ERROR ) {
@@ -51,7 +53,7 @@ class ErrorAlert extends React.Component {
 				<ErrorFloatingContainer>
 					<div className='server-error'>
 						<div>
-							<strong>Oops!</strong> We're having trouble connecting you. You might want to {refresh}, or try again later.
+							{serverErrorText} {refresh}
 						</div>
 					</div>
 				</ErrorFloatingContainer>
@@ -64,7 +66,7 @@ class ErrorAlert extends React.Component {
 					<div>
 						{this._buildSpinner()}
 						<span className='server-error-text'>
-							<strong>Oops!</strong> We're having trouble connecting you. We'll keep trying while this page is open, or you can try again later
+							{connectionErrorText}
 						</span>
 					</div>
 				</div>
@@ -74,7 +76,16 @@ class ErrorAlert extends React.Component {
 }
 
 ErrorAlert.propTypes = {
-	refresh: React.PropTypes.func
+	refresh: React.PropTypes.func,
+	serverErrorText: React.PropTypes.string,
+	connectionErrorText: React.PropTypes.string,
+	resfreshText: React.PropTypes.string
+};
+
+ErrorAlert.defaultProps = {
+	serverErrorText: 'Oops! We\'re having trouble connecting you. You might want to refresh, or try again later.',
+	connectionErrorText: 'Oops! We\'re having trouble connecting you. We\'ll keep trying while this page is open, or you can try again later',
+	refreshText: 'refresh the page'
 };
 
 export default ErrorAlert;
