@@ -3,9 +3,9 @@
 @import './ErrorFloatingContainer.scss';
 
 @mixin _errorContainer( $padding ) {
-	background-color: #fff6f5;
+	background-color: $d2l-color-cinnabar-plus-2;
 	border-radius: 6px;
-	border: 6px solid #f0533f;
+	border: 6px solid $d2l-color-cinnabar;
 	border-right: none;
 	border-top: none;
 	border-bottom: none;
