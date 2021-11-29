@@ -3,7 +3,7 @@
 [![NPM version][npm-image]][npm-url]
 [![Build status][ci-image]][ci-url]
 
-Error alert displayed when connection or server errors occur. Two types or errors will be shown.
+Error alert displayed when connection or server errors occur. Three types or errors will be shown.
 
 1. Connection Error: This errors is for when a network error or a timeout has occured. It will notify the user that the request will be retried.
 
@@ -12,6 +12,8 @@ Error alert displayed when connection or server errors occur. Two types or error
 2. Server Error: This error is for when a fatal error has occured such as a 400 is returned from an API. Within this error is the ability to reload the page.
 
 ![screenshot of loading component](/examples/fatal-error.png?raw=true)
+
+3. Custom Error: For any other kind of error message, this option will show a provided localized message.
 
 ## Installation
 
@@ -55,8 +57,9 @@ let serverErrorText = 'A server error has occured';
 
 To Trigger the different error alerts the library exposes three error actions:
 
-* `handleServerTimeout`: Will display connection error alert
-* `handleServerError`: Will display server error alert
+* `showConnErrorAlert`: Will display connection error alert
+* `showCustomErrorAlert`: Will show a localized error message provided as argument
+* `showServerErrorAlert`: Will display server error alert
 * `hideErrorAlertIfVisible`: Will hide the error alert
 
 ```javascript
@@ -64,6 +67,7 @@ To Trigger the different error alerts the library exposes three error actions:
 import { ErrorActions } from 'react-outcomes-error-alert';
 
 ErrorActions.showConnErrorAlert();
+ErrorActions.showCustomErrorAlert( localizedMessage );
 ErrorActions.showServerErrorAlert();
 ErrorActions.hideErrorAlertIfVisible();
 ```

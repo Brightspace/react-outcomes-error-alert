@@ -4,6 +4,7 @@ import { Actions, ErrorTypes } from './Constants.js';
 
 let errorType = '';
 let errorHasHappened = false;
+let errorLocalizedMessage = null;
 
 const ERROR_EVENT = 'errorEvent';
 
@@ -12,7 +13,8 @@ class ErrorStore extends EventEmitter {
 	getErrorState() {
 		return {
 			errorType: errorType,
-			errorHasHappened: errorHasHappened
+			errorHasHappened: errorHasHappened,
+			errorLocalizedMessage: errorLocalizedMessage
 		};
 	}
 
@@ -44,12 +46,21 @@ ErrorStore.dispatchToken = AppDispatcher.register( payload => {
 		case Actions.SHOW_CONN_ERROR:
 			errorHasHappened = true;
 			errorType = ErrorTypes.CONN_ERROR;
+			errorLocalizedMessage = null;
+			_errorStore.emitError();
+			break;
+
+		case Actions.SHOW_CUSTOM_ERROR:
+			errorHasHappened = true;
+			errorType = ErrorTypes.CUSTOM_ERROR;
+			errorLocalizedMessage = action.localizedMessage;
 			_errorStore.emitError();
 			break;
 
 		case Actions.SHOW_SERVER_ERROR:
 			errorHasHappened = true;
 			errorType = ErrorTypes.SERVER_ERROR;
+			errorLocalizedMessage = null;
 			_errorStore.emitError();
 			break;
 
@@ -57,6 +68,7 @@ ErrorStore.dispatchToken = AppDispatcher.register( payload => {
 			if ( errorHasHappened ) {
 				errorHasHappened = false;
 				errorType = '';
+				errorLocalizedMessage = null;
 				_errorStore.emitError();
 			}
 			break;

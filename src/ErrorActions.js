@@ -10,6 +10,13 @@ export default {
 		});
 	},
 
+	showCustomErrorAlert( localizedMessage ) {
+		AppDispatcher.handleBackgroundAction({
+			actionType: Actions.SHOW_CUSTOM_ERROR,
+			localizedMessage: localizedMessage
+		});
+	},
+
 	showServerErrorAlert( err ) {
 		AppDispatcher.handleBackgroundAction({
 			actionType: Actions.SHOW_SERVER_ERROR,
