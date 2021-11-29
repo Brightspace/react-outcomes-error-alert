@@ -28,8 +28,28 @@ describe( 'ErrorAlert', () => {
 		const state = alert.node.state;
 		expect( state.errorHasHappened ).to.be.true;
 		expect( state.errorType ).to.equal( ErrorTypes.CONN_ERROR );
+		expect( state.errorLocalizedMessage ).to.equal( null );
 		expect( alert.node ).to.not.equal( null );
 		expect( ReactDOM.findDOMNode(alert.node).childNodes[0].childNodes[0].childNodes[0].className ).to.equal( 'conn-error' );
+
+		verifyAlertIsHidden( alert.node );
+	});
+
+	it( 'trigger connection error, error alert should be connection error', () => {
+		const alert = mount( <ErrorAlert /> );
+		verifyAlertIsHidden( alert.node );
+		
+		const localizedMessage = '何か悪いことが起こった';
+		ErrorActions.showCustomErrorAlert( localizedMessage );
+		const state = alert.node.state;
+		expect( state.errorHasHappened ).to.be.true;
+		expect( state.errorType ).to.equal( ErrorTypes.CUSTOM_ERROR );
+		expect( state.errorLocalizedMessage ).to.equal( localizedMessage );
+		expect( alert.node ).to.not.equal( null );
+
+		const containerElement = ReactDOM.findDOMNode(alert.node).childNodes[0].childNodes[0].childNodes[0];
+		expect( containerElement.className ).to.equal( 'custom-error' );
+		expect( containerElement.childNodes[0].innerHTML ).to.equal( localizedMessage );
 
 		verifyAlertIsHidden( alert.node );
 	});
@@ -43,6 +63,7 @@ describe( 'ErrorAlert', () => {
 		const state = alert.node.state;
 		expect( state.errorHasHappened ).to.be.true;
 		expect( state.errorType ).to.equal( ErrorTypes.SERVER_ERROR );
+		expect( state.errorLocalizedMessage ).to.equal( null );
 		expect( alert.node ).to.not.equal( null );
 		expect( ReactDOM.findDOMNode(alert.node).childNodes[0].childNodes[0].childNodes[0].className ).to.equal( 'server-error' );
 

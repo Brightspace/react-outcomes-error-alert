@@ -60,6 +60,18 @@ class ErrorAlert extends React.Component {
 			);
 		}
 
+		if ( this.state.errorType === ErrorTypes.CUSTOM_ERROR ) {
+			return (
+				<ErrorFloatingContainer>
+					<div className='custom-error' >
+						<div>
+							{this.state.errorLocalizedMessage}
+						</div>
+					</div>
+				</ErrorFloatingContainer>
+			);
+		}
+
 		return (
 			<ErrorFloatingContainer>
 				<div className='conn-error' >

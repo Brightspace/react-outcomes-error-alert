@@ -32,6 +32,10 @@
 	}
 }
 
+.custom-error {
+	@include _errorContainer( 14px );
+}
+
 .conn-error {
 	@include _errorContainer( 10px );
 
